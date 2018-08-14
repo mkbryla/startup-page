@@ -8,3 +8,11 @@ html, body {
   font-family: 'Lato', sans-serif;
   color: white;
 }
+
+@mixin transition($attributes...) {
+  $style: null;
+  @each $attribute in $attributes {
+    $style: $style, $attribute 0.2s ease-in-out;
+  }
+  transition: $style;
+}
