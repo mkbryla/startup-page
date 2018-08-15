@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-time',
-  templateUrl: './time.component.html',
-  styleUrls: ['./time.component.scss']
+  templateUrl: './date.component.html',
+  styleUrls: ['./date.component.scss']
 })
-export class TimeComponent implements OnInit {
+export class DateComponent implements OnInit {
 
   public date: Date;
 

@@ -5,13 +5,13 @@ import { HttpClientModule } from "@angular/common/http";
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppComponent } from './app.component';
-import { TimeComponent } from './components/time/time.component';
+import { DateComponent } from './components/date/date.component';
 import { BoxComponent } from './components/box/box.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TimeComponent,
+    DateComponent,
     BoxComponent
   ],
   imports: [
