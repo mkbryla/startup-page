@@ -1,0 +1,30 @@
+#.travis.yml
+
+language: node_js
+node_js:
+- "10.8"
+
+branches:
+  only:
+  - master
+
+sudo: required
+
+addons:
+  chrome: stable
+
+before_script:
+- npm install -g yarn
+- yarn global add firebase-tools
+- yarn global add @angular/cli
+
+script:
+- yarn ci
+
+after_success:
+- firebase deploy --token $FIREBASE_TOKEN
+
+notifications:
+  email:
+    on_failure: change
+    on_success: change

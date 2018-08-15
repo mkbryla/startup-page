@@ -1,11 +1,13 @@
 import { TestBed, inject } from '@angular/core/testing';
 
 import { UnsplashService } from './unsplash.service';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('UnsplashService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [UnsplashService]
+      providers: [UnsplashService],
+      imports: [HttpClientModule]
     });
   });
 
