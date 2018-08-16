@@ -1,4 +1,6 @@
-.app {
+@import "~src/styles";
+
+.app__background {
   height: 100%;
   width: 100%;
   background: url("https://knowledgeablebroker.com/wp-content/uploads/kluane-national-park-canada-photo-by-kalen-emsley-5760x-3840.jpg");
@@ -7,4 +9,27 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.app__content {
+  width: 80%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.app__settings {
+  font-size: 2rem;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+  @include transition(color, transform);
+
+  &:hover {
+    color: $grey;
+    transform: rotate(90deg);
+  }
 }

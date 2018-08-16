@@ -1,6 +1,6 @@
 import { Injectable, OnDestroy } from '@angular/core';
-import { Observable, Subject } from "rxjs";
-import { debounceTime, distinctUntilChanged, map, startWith, takeUntil } from "rxjs/operators";
+import { Observable, Subject } from 'rxjs';
+import { debounceTime, distinctUntilChanged, map, startWith, takeUntil } from 'rxjs/operators';
 
 export enum DEVICE {
   DESKTOP = 'DESKTOP',
@@ -35,8 +35,8 @@ export class MediaService implements OnDestroy {
       map(() => this.setDeviceOrientation()),
       distinctUntilChanged(),
       debounceTime(300),
-      map(()=>window.innerWidth)
-    )
+      map(() => window.innerWidth)
+    );
   }
 
   public ngOnDestroy(): void {
@@ -50,7 +50,7 @@ export class MediaService implements OnDestroy {
   }
 
   private setDeviceOrientation(): DEVICE_ORIENTATION {
-   return this.deviceOrientation = window.innerWidth > window.innerHeight
+    return this.deviceOrientation = window.innerWidth > window.innerHeight
       ? DEVICE_ORIENTATION.LANDSCAPE
       : DEVICE_ORIENTATION.PORTRAIT;
   }

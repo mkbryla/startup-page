@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from "@angular/common/http";
+import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 import { DEVICE_ORIENTATION } from '../media/media.service';
 import { Observable } from 'rxjs';
@@ -21,6 +21,6 @@ export class UnsplashService {
       w: width.toString(),
       query: category
     };
-    return this.http.get(this.unsplashURL, {params: queryParams})
+    return this.http.get(this.unsplashURL, {params: queryParams});
   }
 }

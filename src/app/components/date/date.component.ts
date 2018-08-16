@@ -1,23 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-time',
+  selector: 'app-date',
   templateUrl: './date.component.html',
-  styleUrls: ['./date.component.scss']
+  styleUrls: [ './date.component.scss' ]
 })
 export class DateComponent implements OnInit {
 
   public date: Date;
 
-  constructor() { }
-
   public ngOnInit(): void {
+    this.date = new Date();
     this.setDate();
   }
 
   public setDate(): void {
-    setInterval(()=>{
+    setInterval(() => {
       this.date = new Date();
-    },1000)
+    }, 1000);
   }
 }

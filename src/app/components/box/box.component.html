@@ -1,8 +1,26 @@
-<div class="box__content">
-  <fa-icon [icon]="faPlus" class="box__add"></fa-icon>
-</div>
+<div class="box" [ngSwitch]="widget" [class.box--empty]="!widget">
+  <ng-container *ngSwitchCase="widgetType.DATE">
+    <app-date></app-date>
+  </ng-container>
 
-<div class="box__border"></div>
-<div class="box__border"></div>
-<div class="box__border"></div>
-<div class="box__border"></div>
+  <ng-container *ngSwitchCase="widgetType.WEATHER">
+    WEATHER
+  </ng-container>
+
+  <ng-container *ngSwitchCase="widgetType.TODO">
+    TODO
+  </ng-container>
+
+  <ng-container *ngSwitchCase="widgetType.FAVLINKS">
+    FAVLINKS
+  </ng-container>
+
+  <ng-container *ngSwitchDefault>
+    <app-empty-box *ngIf="isSettingsMode" (widgetSelected)="onWidgetSelected($event)"></app-empty-box>
+  </ng-container>
+
+  <div class="box__close">
+    <fa-icon *ngIf="widget && isSettingsMode" [icon]="faClose" class="box__close--icon" (click)="onWidgetSelected(null)"></fa-icon>
+  </div>
+
+</div>

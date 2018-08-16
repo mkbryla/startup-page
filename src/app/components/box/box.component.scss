@@ -1,82 +1,53 @@
-@import "../../../styles";
-
-$border-thickness: 4px;
-$transparent-white: rgba(255,255,255,0.4);
+@import "~src/styles";
 
 :host {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+:host(.box--small) {
+  width: 25%;
+  height: 50%;
+}
+
+:host(.box--default) {
+  width: 50%;
+  height: 50%;
+}
+
+.box {
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
   position: relative;
   display: flex;
-  width: 500px;
-  height: 500px;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
-  cursor: pointer;
-}
+  user-select: none;
 
-:host:hover {
-  .box__content {
-    background: rgba(255,255,255,0.2);
-  }
-
-  .box__add {
-    font-size: 5.5rem;
-    color: white;
-  }
-
-  .box__border {
-    width: 25%;
-    height: 25%;
-    border-color: white;
+  & > * {
+    animation: fade-in 1s;
   }
 }
 
-.box__content {
-  display: flex;
-  height: 100%;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  @include transition(background);
-}
-
-.box__add {
-  font-size: 5rem;
-  color: $transparent-white;
-  @include transition(font-size, color)
-}
-
-.box__border {
+.box__close {
+  font-size: 2rem;
   position: absolute;
-  width: 20%;
-  height: 20%;
-  @include transition(height, width);
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-  &:nth-of-type(2) {
-    top: 0;
-    left: 0;
-    border-top: $border-thickness solid $transparent-white;
-    border-left: $border-thickness solid $transparent-white;
-  }
+  @include transition(color, font-size);
 
-  &:nth-of-type(3) {
-    top: 0;
-    right: 0;
-    border-top: $border-thickness solid $transparent-white;
-    border-right: $border-thickness solid $transparent-white;
-  }
-
-  &:nth-of-type(4) {
-    bottom: 0;
-    right: 0;
-    border-bottom: $border-thickness solid $transparent-white;
-    border-right: $border-thickness solid $transparent-white;
-  }
-
-  &:nth-of-type(5) {
-    bottom: 0;
-    left: 0;
-    border-bottom: $border-thickness solid $transparent-white;
-    border-left: $border-thickness solid $transparent-white;
+  &:hover {
+    color:$red;
+    font-size: 2.5rem;
   }
 }

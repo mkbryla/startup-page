@@ -1,0 +1,19 @@
+<div class="empty-box__content" (click)="openListOfWidgets()">
+  <ng-container *ngIf="listOfWidgetsOpened; else empty">
+    <ul class="empty-box__list-of-widgets">
+      <li class="empty-box__widget" *ngFor="let widget of availableWidgets" (click)="setWidget(widget)">
+        {{widget | titlecase}}
+      </li>
+    </ul>
+  </ng-container>
+
+  <ng-template #empty>
+    <fa-icon [icon]="faPlus" class="empty-box__add"></fa-icon>
+  </ng-template>
+</div>
+
+<div class="empty-box__border"></div>
+<div class="empty-box__border"></div>
+<div class="empty-box__border"></div>
+<div class="empty-box__border"></div>
+

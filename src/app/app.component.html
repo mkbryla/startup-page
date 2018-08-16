@@ -1,4 +1,11 @@
-<div #app class="app">
-  <app-time></app-time>
-  <app-box></app-box>
+<div #app class="app__background">
+  <div class="app__content">
+    <app-box [isSettingsMode]="isSettingsMode"  [size]="boxSize.SMALL"></app-box>
+    <app-box [isSettingsMode]="isSettingsMode"></app-box>
+    <app-box [isSettingsMode]="isSettingsMode" [size]="boxSize.SMALL"></app-box>
+    <app-box [isSettingsMode]="isSettingsMode"></app-box>
+    <app-box [isSettingsMode]="isSettingsMode"></app-box>
+  </div>
 </div>
+
+<fa-icon [icon]="faSettings" class="app__settings" (click)="toggleSettingsMode()"></fa-icon>
