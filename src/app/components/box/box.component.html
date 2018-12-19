@@ -1,4 +1,4 @@
-<div class="box" [ngSwitch]="widget" [class.box--empty]="!widget">
+<div class="box" [ngSwitch]="widget" cdkDrag>
   <ng-container *ngSwitchCase="widgetType.DATE">
     <app-date></app-date>
   </ng-container>
@@ -20,7 +20,7 @@
   </ng-container>
 
   <div class="box__close">
-    <fa-icon *ngIf="widget && isSettingsMode" [icon]="faClose" class="box__close--icon" (click)="onWidgetSelected(null)"></fa-icon>
+    <fa-icon *ngIf="widget && isSettingsMode" [icon]="faClose" (click)="onWidgetSelected(null)"></fa-icon>
   </div>
 
 </div>

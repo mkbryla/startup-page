@@ -16,13 +16,14 @@ $transparent-white: rgba(255, 255, 255, 0.4);
 
   .empty-box__add {
     font-size: 5.5rem;
-    color: white;
+    color: $white;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
   }
 
   .empty-box__border {
     width: 25%;
     height: 25%;
-    border-color: white;
+    border-color: $white;
   }
 }
 
@@ -34,7 +35,7 @@ $transparent-white: rgba(255, 255, 255, 0.4);
   justify-content: center;
   position: relative;
   z-index: 2;
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
   font-size: 2rem;
   @include transition(background);
 }

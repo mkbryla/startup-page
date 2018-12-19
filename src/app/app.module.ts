@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
@@ -19,7 +20,8 @@ import { EmptyBoxComponent } from './components/empty-box/empty-box.component';
   imports: [
     BrowserModule,
     HttpClientModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [ AppComponent ]

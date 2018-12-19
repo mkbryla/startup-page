@@ -1,9 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css?family=Lato:400,700');
 
+//https://coolors.co/ed6a5a-f4ef90-72b7c1-5aa86c-60625d
+
 $white: #f4f4f4;
 $grey: #d2d6cc;
+$dark-grey: #60625d;
 $red: #ed6a5a;
+$green: #5aa86c;
+$yellow: #f4ef90;
+$blue: #72b7c1;
 
 * {
   box-sizing: border-box;
@@ -14,7 +20,7 @@ html, body {
   height: 100%;
   margin: 0;
   font-family: 'Lato', sans-serif;
-  color: white;
+  color: $white;
 }
 
 @keyframes fade-in {

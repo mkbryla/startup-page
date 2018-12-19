@@ -3,7 +3,7 @@
 .app__background {
   height: 100%;
   width: 100%;
-  background: url("https://knowledgeablebroker.com/wp-content/uploads/kluane-national-park-canada-photo-by-kalen-emsley-5760x-3840.jpg");
+  background: url("https://images.unsplash.com/photo-1540202404-d0c7fe46a087?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1490&q=80");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -23,13 +23,22 @@
 .app__settings {
   font-size: 2rem;
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  top: 0;
+  right: 0;
   cursor: pointer;
-  @include transition(color, transform);
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-  &:hover {
-    color: $grey;
+  &:hover .app__settings-icon {
+    color: $dark-grey;
     transform: rotate(90deg);
+    font-size: 2.5rem;
   }
+}
+
+.app__settings-icon {
+  @include transition(color, font-size, transform);
 }
