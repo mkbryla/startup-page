@@ -23,6 +23,14 @@ html, body {
   color: $white;
 }
 
+@mixin transition($attributes...) {
+  $style: null;
+  @each $attribute in $attributes {
+    $style: $style, $attribute 0.3s ease-in-out;
+  }
+  transition: $style;
+}
+
 @keyframes fade-in {
   from {
     opacity: 0;
@@ -33,10 +41,12 @@ html, body {
   }
 }
 
-@mixin transition($attributes...) {
-  $style: null;
-  @each $attribute in $attributes {
-    $style: $style, $attribute 0.2s ease-in-out;
-  }
-  transition: $style;
+.fade-in {
+  @include transition(opacity);
+
+  animation: fade-in 0.3s;
+}
+
+.fade-out {
+  opacity: 0;
 }

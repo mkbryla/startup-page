@@ -1,4 +1,4 @@
-import { Component, HostBinding, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, HostBinding, Input, OnInit } from '@angular/core';
 import { faTimes, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 
 export enum BOX_SIZE {
@@ -16,7 +16,8 @@ export enum WIDGET_TYPE {
 @Component({
   selector: 'app-box',
   templateUrl: './box.component.html',
-  styleUrls: [ './box.component.scss' ]
+  styleUrls: [ './box.component.scss' ],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BoxComponent implements OnInit {
   @HostBinding('attr.class') public hostClass: string;

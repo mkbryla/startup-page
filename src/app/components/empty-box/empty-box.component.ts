@@ -1,11 +1,12 @@
-import { Component, EventEmitter, HostListener, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, HostListener, Output } from '@angular/core';
 import { faPlus, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import { WIDGET_TYPE } from '../box/box.component';
 
 @Component({
   selector: 'app-empty-box',
   templateUrl: './empty-box.component.html',
-  styleUrls: [ './empty-box.component.scss' ]
+  styleUrls: [ './empty-box.component.scss' ],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class EmptyBoxComponent {
   @Output() public widgetSelected: EventEmitter<WIDGET_TYPE> = new EventEmitter();

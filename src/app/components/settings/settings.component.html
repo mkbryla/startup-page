@@ -1,0 +1,4 @@
+<fa-icon appHover (hovered)="toggleSettingsMode($event)" [icon]="faSettings" class="app__settings-icon"></fa-icon>
+<div class="app__settings" [class.app__settings--opened]="isSettingsHovered">
+</div>
+<span class="test" *appIf="isSettingsHovered">test</span>
