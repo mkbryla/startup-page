@@ -1,20 +1,12 @@
 import { Directive, ElementRef, Input, TemplateRef, ViewContainerRef } from '@angular/core';
 
 @Directive({
-  selector: '[appIf]'
+  selector: '[appIfFaded]'
 })
-export class IfDirective {
-
-  constructor(
-    private elementRef: ElementRef,
-    private templateRef: TemplateRef<any>,
-    private viewContainer: ViewContainerRef
-  ) {
-    console.log('___', this);
-  }
+export class IfFadedDirective {
 
   @Input()
-  public set appIf(value: boolean) {
+  public set appIfFaded(value: boolean) {
     if (value) {
       this.viewContainer.createEmbeddedView(this.templateRef);
       this.elementRef.nativeElement.nextSibling.classList.add('fade-in');
@@ -27,5 +19,12 @@ export class IfDirective {
         this.viewContainer.clear();
       }, 300);
     }
+  }
+
+  constructor(
+    private elementRef: ElementRef,
+    private templateRef: TemplateRef<any>,
+    private viewContainer: ViewContainerRef
+  ) {
   }
 }

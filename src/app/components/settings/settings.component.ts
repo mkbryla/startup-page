@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { faCog, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -7,14 +7,9 @@ import { faCog, IconDefinition } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./settings.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SettingsComponent implements OnInit {
+export class SettingsComponent {
   public faSettings: IconDefinition = faCog;
   public isSettingsHovered: boolean;
-
-  constructor() { }
-
-  ngOnInit() {
-  }
 
   public toggleSettingsMode(hovered: boolean): void {
     this.isSettingsHovered = hovered;

@@ -7,19 +7,19 @@ export class HoverDirective {
   @Output() public hovered: EventEmitter<boolean> = new EventEmitter();
 
   @HostListener('mouseenter')
-  public mouseOver(): void {
+  public mouseEnter(): void {
     this.elementRef.nativeElement.classList.add('hovered');
     this.hovered.emit(true);
-  }
+}
 
   @HostListener('mouseleave')
-  public mouseOut(): void {
+  public mouseLeave(): void {
     this.elementRef.nativeElement.classList.remove('hovered');
     this.hovered.emit(false);
 
   }
 
-  constructor(public elementRef: ElementRef) {
+  constructor(private elementRef: ElementRef) {
   }
 
 }
