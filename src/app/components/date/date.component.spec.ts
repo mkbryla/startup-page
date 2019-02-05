@@ -17,12 +17,4 @@ describe('DateComponent', () => {
     fixture = TestBed.createComponent(DateComponent);
     component = fixture.componentInstance;
   });
-
-  it('should set date and call setDate onInit', () => {
-    expect(component.date).toEqual(undefined);
-    const spy = spyOn(component, 'setDate');
-    component.ngOnInit();
-    expect(component.date).not.toEqual(undefined);
-    expect(spy).toHaveBeenCalled();
-  });
 });
