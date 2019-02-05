@@ -19,8 +19,27 @@
     <app-empty-box *ngIf="isSettingsMode" (widgetSelected)="onWidgetSelected($event)"></app-empty-box>
   </ng-container>
 
-  <div class="box__close">
-    <fa-icon *ngIf="widget && isSettingsMode" [icon]="faClose" (click)="onWidgetSelected(null)"></fa-icon>
-  </div>
+  <div class="box__bar" *appIfFaded="widget && isSettingsMode">
+    <div class="box__icon box__icon--save">
+      <fa-icon [icon]="faSave"></fa-icon>
+    </div>
 
+    <div class="box__icon box__icon--move" cdkDragHandle>
+      <fa-icon [icon]="faMove"></fa-icon>
+    </div>
+
+    <div class="box__icon box__icon--size-up">
+      <fa-icon class="box__icon--size-up-arrow" [icon]="faArrow"></fa-icon>
+      <fa-icon class="box__icon--size-up-arrow" [icon]="faArrow"></fa-icon>
+    </div>
+
+    <div class="box__icon box__icon--size-down">
+      <fa-icon class="box__icon--size-down-arrow" [icon]="faArrow"></fa-icon>
+      <fa-icon class="box__icon--size-down-arrow" [icon]="faArrow"></fa-icon>
+    </div>
+
+    <div class="box__icon box__icon--delete">
+      <fa-icon [icon]="faDelete" (click)="onWidgetSelected(null)"></fa-icon>
+    </div>
+  </div>
 </div>

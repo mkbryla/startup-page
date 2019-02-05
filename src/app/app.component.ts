@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
   @ViewChild('app') public appElement: ElementRef;
 
   public boxSize: typeof BOX_SIZE = BOX_SIZE;
-  public isSettingsMode: boolean;
+  public isSettingsMode: boolean = true;
 
   constructor(private unsplashService: UnsplashService, private mediaService: MediaService) {
   }
