@@ -1,6 +1,7 @@
-<span class="date__time">{{date | date : 'HH:mm'}}</span>
-<div class="date__wrapper">
-  <span class="date__weekday">{{date | date : 'EEEE'}}</span>
-  <span class="date__month-and-day">{{date | date : 'dd.MM.yyyy'}}</span>
-</div>
-
+<ng-container *ngIf="date$ | async as date">
+  <span class="date__time">{{date | date : 'HH:mm'}}</span>
+  <div class="date__wrapper">
+    <span class="date__weekday">{{date | date : 'EEEE'}}</span>
+    <span class="date__month-and-day">{{date | date : 'dd.MM.yyyy'}}</span>
+  </div>
+</ng-container>
