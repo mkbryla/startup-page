@@ -1,4 +1,4 @@
-<div class="box" [ngSwitch]="widget" cdkDrag>
+<div class="box" [ngSwitch]="widget" cdkDrag [cdkDragDisabled]="!(widget && isSettingsMode)">
   <ng-container *ngSwitchCase="widgetType.DATE">
     <app-date></app-date>
   </ng-container>
@@ -19,7 +19,7 @@
     <app-empty-box *ngIf="isSettingsMode" (widgetSelected)="onWidgetSelected($event)"></app-empty-box>
   </ng-container>
 
-  <div class="box__bar" *appIfFaded="widget && isSettingsMode">
+  <div class="box__bar" fade *ngIf="widget && isSettingsMode">
     <div class="box__icon box__icon--save">
       <fa-icon [icon]="faSave"></fa-icon>
     </div>

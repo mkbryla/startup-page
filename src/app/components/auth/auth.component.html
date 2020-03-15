@@ -1,0 +1,6 @@
+<ng-container *ngIf="authService.user$ | async as user; else notLoggedIn">
+  <button fade (click)="authService.signOut()">Sign out {{user.displayName}}</button>
+</ng-container>
+<ng-template #notLoggedIn>
+  <button fade (click)="authService.googleSignIn()">Sign in</button>
+</ng-template>

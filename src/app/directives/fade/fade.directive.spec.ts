@@ -1,4 +1,4 @@
-import { IfFadedDirective } from './if-faded.directive';
+import { IfFadedDirective } from './fade.directive';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Component, DebugElement, ElementRef } from '@angular/core';
 import { By } from '@angular/platform-browser';

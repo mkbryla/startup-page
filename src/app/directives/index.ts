@@ -1,2 +1,2 @@
 export * from './hover';
-export * from './if-faded';
+export * from './fade';

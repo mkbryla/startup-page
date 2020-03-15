@@ -5,7 +5,7 @@ import { By } from '@angular/platform-browser';
 
 @Component({
   template: `
-    <div id="testComponent" appHover (hovered)="onHover($event)"></div>`
+    <div id="testComponent" (hover)="onHover($event)"></div>`
 })
 class TestComponent {
   public isHovered: boolean;

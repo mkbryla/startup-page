@@ -1,4 +1,4 @@
-<fa-icon appHover (hovered)="toggleSettingsMode($event)" [icon]="faSettings" class="app__settings-icon"></fa-icon>
-<div class="app__settings" [class.app__settings--opened]="isSettingsHovered">
+<fa-icon (hover)="toggleSettingsMode($event)" [icon]="faSettings" class="app__settings-icon"></fa-icon>
+<div class="app__settings" [class.app__settings--opened]="showSettings$ | async" (hover)="toggleSettingsMode($event)">
+    <app-auth></app-auth>
 </div>
-<span class="test" *appIfFaded="isSettingsHovered">test</span>
